@@ -1,0 +1,58 @@
+
+.filter {
+  appearance: none;
+  max-width: 595px;
+  display: flex;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.input {
+  max-width: 480px;
+  display: flex;
+  flex-grow: 1;
+  margin-right: 14px;
+}
+
+.select {
+  background-color: #fff;
+  min-width: 100px;
+  height: 60px;
+  border-radius: 12px;
+  padding: 20px;
+  /* background-image: url('../../assets/chevron-down.svg');
+  background-repeat: no-repeat; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.img {
+  width: 20px;
+}
+
+.arrow {
+  width: 14px;
+  height: 9px;
+}
+
+.smile {
+  width: 20px;
+}
+
+@media screen and (max-width: 1231px) {
+  .filter {
+    display: flex;
+    flex-basis: 100%;
+    order: 2;
+    max-width: none;
+    margin-top: 30px;
+  }
+
+  .input {
+    width: 100%;
+    max-width: none;
+  }
+
+}

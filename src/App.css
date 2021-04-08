@@ -1,0 +1,67 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  max-width: 1360px;
+  margin: auto;
+  width: 95%;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  background-color: #FDFCF3;
+  font-family: 'Roboto', sans-serif;
+}
+
+input, select {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: none;
+  padding: 20px 16px;
+  width: 60px;
+}
+
+input, textarea::-webkit-input-placeholder {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ACACAC;
+}
+
+input, textarea:-moz-placeholder {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ACACAC;
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    max-width: 864px;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .App {
+    max-width: 280px;
+    /* width: 85%; */
+  }
+}

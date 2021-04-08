@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+.btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  padding: 11px 34px;
+  background-color: #fff;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 40px;
+}
+
+.btn:not(:last-child) {
+  margin-right: 14px;
+}
+
+.primary {
+  background: #FFCE89;
+  color: #1E2022;
+}
+
+.secondary {
+  background: linear-gradient(135deg, #61B15A 0%, #ADCE74 100%);
+  color: #fff;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .text {
+    /* display: none; */
+  }
+
+  .image {
+    /* margin-right: 0; */
+    text-align: center;
+  }
+
+  .btn {
+    width: 135px;
+    height: 30px;
+    justify-content: center;
+  }
+
+  .btn:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .text {
+    display: none;
+  }
+
+  .image {
+    margin: 0;
+  }
+}
