@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/edword03/Diary/static/css/main.41ad011c.chunk.css",
+    "main.js": "/edword03/Diary/static/js/main.d6c9a26b.chunk.js",
+    "main.js.map": "/edword03/Diary/static/js/main.d6c9a26b.chunk.js.map",
+    "runtime-main.js": "/edword03/Diary/static/js/runtime-main.a0b76194.js",
+    "runtime-main.js.map": "/edword03/Diary/static/js/runtime-main.a0b76194.js.map",
+    "static/js/2.ccd29c2d.chunk.js": "/edword03/Diary/static/js/2.ccd29c2d.chunk.js",
+    "static/js/2.ccd29c2d.chunk.js.map": "/edword03/Diary/static/js/2.ccd29c2d.chunk.js.map",
+    "static/js/3.363e17e7.chunk.js": "/edword03/Diary/static/js/3.363e17e7.chunk.js",
+    "static/js/3.363e17e7.chunk.js.map": "/edword03/Diary/static/js/3.363e17e7.chunk.js.map",
+    "index.html": "/edword03/Diary/index.html",
+    "static/css/main.41ad011c.chunk.css.map": "/edword03/Diary/static/css/main.41ad011c.chunk.css.map",
+    "static/js/2.ccd29c2d.chunk.js.LICENSE.txt": "/edword03/Diary/static/js/2.ccd29c2d.chunk.js.LICENSE.txt",
+    "static/media/Union.9b7a7995.svg": "/edword03/Diary/static/media/Union.9b7a7995.svg",
+    "static/media/check.299919a3.svg": "/edword03/Diary/static/media/check.299919a3.svg",
+    "static/media/display-grid.ed21f85f.svg": "/edword03/Diary/static/media/display-grid.ed21f85f.svg",
+    "static/media/icon.7f75abbd.svg": "/edword03/Diary/static/media/icon.7f75abbd.svg",
+    "static/media/pen.41a0b22a.svg": "/edword03/Diary/static/media/pen.41a0b22a.svg",
+    "static/media/search-found.a565e3e6.svg": "/edword03/Diary/static/media/search-found.a565e3e6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0b76194.js",
+    "static/js/2.ccd29c2d.chunk.js",
+    "static/css/main.41ad011c.chunk.css",
+    "static/js/main.d6c9a26b.chunk.js"
+  ]
+}
