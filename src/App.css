@@ -1,16 +1,26 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
 button {
   border: none;
   background-color: inherit;
+}
+
+button,
+select,
+input,
+textarea {
+  outline: none;
 }
 
 a {
@@ -26,30 +36,57 @@ a {
 }
 
 body {
-  background-color: #FDFCF3;
+  background-color: #fdfcf3;
   font-family: 'Roboto', sans-serif;
+  scrollbar-color: rgba(57, 57, 57, 0.3);
+  scrollbar-width: thin;
 }
 
-input, select {
-  background: #FFFFFF;
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+input,
+select,
+textarea {
+  background: #ffffff;
   border-radius: 12px;
-  border: none;
+  border: 1px solid transparent;
   padding: 20px 16px;
   width: 60px;
+  transition: 0.5s;
 }
 
-input, textarea::-webkit-input-placeholder {
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #ffb349;
+}
+
+input,
+textarea::-webkit-input-placeholder {
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #ACACAC;
+  color: #acacac;
 }
 
-input, textarea:-moz-placeholder {
+input,
+textarea:-moz-placeholder {
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #ACACAC;
+  color: #acacac;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,13 +1,14 @@
-import React from 'react';
-import Select from './Select'
+import React, { useState } from 'react';
+import Select from './Select';
 import classes from './Filter.module.css';
-import smile from '../../assets/smile-mouth-open.svg';
 
 const Filter = () => {
+  const [smile, setSmile] = useState('');
+
   return (
     <div className={classes.filter}>
       <input type="text" className={`input ${classes.input}`} placeholder="Поиск" />
-      <Select smile={smile} />
+      <Select smile={smile} setSmile={setSmile} />
     </div>
   );
 };

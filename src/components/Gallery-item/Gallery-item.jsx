@@ -1,17 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import './Gallery-item.css'
+import classes from './Gallery-item.module.css'
+import { ReactComponent as Check } from '../../assets/check.svg';
 
-const GalleryItem = props => {
+
+const GalleryItem = ({src, onClick}) => {
+  const [selected, setSelected] = useState(false);
+
   return (
-    <div className={`gallery-item ${props.styles}`}>
-      <img src={props.img} alt="" className="gallery__img" />
+    <div className={`${classes.item} ${classes.large}`} onClick={() => {
+      onClick(src)
+      setSelected(true)
+    }}>
+      <img src={src} alt="" className={classes.img} />
+      {selected ? <div className={classes.selected}><Check/></div> : null}
     </div>
   );
 };
 
 GalleryItem.propTypes = {
-  img: PropTypes.string
+  src: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default GalleryItem;

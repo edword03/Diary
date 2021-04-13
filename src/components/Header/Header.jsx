@@ -37,8 +37,8 @@ const Header = ({setIsNote, isNote}) => {
 };
 
 Header.propTypes = {
-  setIsNote: PropTypes.func,
-  isNote: PropTypes.bool.isRequired
+  setIsNote: PropTypes.func.isRequired,
+  isNote: PropTypes.bool
 };
 
 export default Header;

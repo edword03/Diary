@@ -3,11 +3,10 @@ import classes from './Button.module.css';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  console.log(typeof props.btnImg);
   return (
     <button
       className={`${classes.btn} ${props.primary ? classes.primary : classes.secondary} ${
-        props.btnCastom
+        props.btnCastom || ''
       }`}
       onClick = {props.onClick}>
       <img src={props.btnImg} alt="" className={classes.image} />

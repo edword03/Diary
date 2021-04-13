@@ -1,22 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Note from '../Note-block/NoteNlock';
-import Smile1 from '../../assets/smiles/😌.svg';
+import { Contex } from '../../Contex';
 
-import './Main.css';
-// 563492ad6f91700001000001b13fdfef0b8b45e7bbc33c02891bd117
+import classes from './Main.module.css';
+
 const Main = () => {
+  const {notes} = useContext(Contex);
   return (
-    <main className="main">
-      <Note smile={Smile1} />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
-      <Note />
+    <main className={classes.container}>
+      {notes.map((note, index) => <Note key={`note_${index}`} {...note} />)}
     </main>
   );
 };

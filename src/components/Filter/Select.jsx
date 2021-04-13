@@ -1,19 +1,24 @@
-import React from 'react';
+import React  from 'react';
 import { moods } from '../../api/data';
 
-import smileDefault from '../../assets/smile-mouth-open.svg'
-
-import arrow from '../../assets/chevron-down.svg';
 import classes from './Filter.module.css';
 
-const Select = props => {
+const Select = ({ smile, setSmile }) => {
   return (
-    <select className={`select ${classes.select}`} value=''> 
-      {/* <img src={props.smile} alt="" className={classes.smile} />
-      <img src={arrow} alt="" className={classes.arrow} /> */}
-      <option value="">{smileDefault}</option>
-      {moods.map((smile, index) => <option key={`smile-option_${index}`} value={index === 0 ? '' : index}>{smile}</option>)}
-    </select>
+    <div className={classes.selector}>
+      <select
+        className={`select ${classes.select}`}
+        value={smile}
+        onChange={e => setSmile(e.target.value.trim())}>
+        <option value=""></option>
+        {moods.map((smileItem, index) => (
+          <option key={`smile-option_${index}`} value={smileItem}>
+            {smileItem}
+          </option>
+        ))}
+      </select>
+      {!smile ? <i className={`${classes.icon} far fa-laugh`}></i> : ''}
+    </div>
   );
 };
 

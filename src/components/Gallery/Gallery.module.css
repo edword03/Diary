@@ -1,0 +1,27 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+}
+
+.galleryBlock {
+  max-width: 670px;
+  width: 100%;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  background: #FFF76A;
+  border-radius: 12px;
+  margin-left: 14px;
+}
+
+.input {
+  max-width: 596px;
+  width: 100%;
+}
+
+.search {
+  display: flex;
+}

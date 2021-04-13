@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   max-height: 40px;
+  transition: all .5s;
 }
 
 .btn:not(:last-child) {
@@ -26,9 +27,31 @@
   color: #1E2022;
 }
 
+.primary:hover {
+  background: #fcbd66;
+  color: rgb(0, 0, 0)
+}
+
+.primary:active {
+  background: #ffb349;
+  color: #f8ca88
+}
+
 .secondary {
   background: linear-gradient(135deg, #61B15A 0%, #ADCE74 100%);
-  color: #fff;
+  color: rgba(255, 255, 255, .95);
+  opacity: .9;
+}
+
+.secondary:hover {
+  opacity: 1;
+  color: #fff
+}
+
+.secondary:active {
+  opacity: 1;
+  color:#e8ffe2;
+  background: linear-gradient(135deg, #5cb354 0%, #91b15a 100%);
 }
 
 .image {
@@ -43,12 +66,7 @@
 }
 
 @media screen and (max-width: 700px) {
-  .text {
-    /* display: none; */
-  }
-
   .image {
-    /* margin-right: 0; */
     text-align: center;
   }
 
