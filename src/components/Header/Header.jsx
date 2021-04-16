@@ -9,7 +9,7 @@ import logo from '../../assets/icon.svg';
 import BtnSvg from '../../assets/display-grid.svg';
 import pen from '../../assets/pen.svg';
 
-const Header = ({setIsNote, isNote}) => {
+const Header = React.memo(({ setIsNote, isNote }) => {
   const onAddNote = () => setIsNote(false);
   const onList = () => setIsNote(true);
 
@@ -34,11 +34,11 @@ const Header = ({setIsNote, isNote}) => {
       </div>
     </header>
   );
-};
+});
 
 Header.propTypes = {
   setIsNote: PropTypes.func.isRequired,
-  isNote: PropTypes.bool
+  isNote: PropTypes.bool,
 };
 
 export default Header;

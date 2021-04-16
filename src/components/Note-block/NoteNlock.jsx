@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 import classes from './Note.module.css';
 
-const NoteBlock = ({ smile, src, title, date, text }) => {
+const NoteBlock = React.memo(({ smile, src, title, date, text }) => {
   const [modal, setModal] = useState(false);
   const [textValue, setTextValue] = useState(text);
 
@@ -48,7 +48,7 @@ const NoteBlock = ({ smile, src, title, date, text }) => {
       )}
     </>
   );
-};
+});
 
 NoteBlock.propTypes = {
   smile: PropTypes.string,

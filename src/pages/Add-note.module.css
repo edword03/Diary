@@ -1,28 +1,27 @@
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   /* flex-wrap: wrap; */
 }
 
-.note-form__input-name {
+.inputName {
   width: 100%;
 }
 
-.form-block {
+.formBlock {
   max-width: 670px;
   width: 100%;
-  margin-right: 20px;
 }
 
 
-.note-form__input-date {
+.inputDate {
   max-width: 210px;
   width: 100%;
   margin-left: 16px;
 }
 
-.note-form__textarea {
+.textarea {
   width: 100%;
   height: 478px;
   font-weight: 300;
@@ -31,65 +30,73 @@
   color: #1E2022;
 }
 
-.form__group {
+.group {
   margin-bottom: 16px;
 }
 
-.form__group:first-child {
+.group:first-child {
   width: 100%;
 }
 
-.form__group:not(:first-child) {
+.group:not(:first-child) {
   display: flex;
 }
 
-.note__btn {
+.noteBtn {
   margin-left: auto;
   max-height: 40px;
   margin-top: 20px;
 }
 
 @media screen and (max-width: 1432px) {
-  .main-content {
+  .mainContent {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .form-container {
-    display: flex;
-  }
 
-  .form__group:first-child {
+  .group:first-child {
     margin-right: 16px;
   }
 
-  .form-block {
+  .formBlock {
     max-width: 100%;
   }
 
-  .note__btn {
+}
+
+@media screen and (max-width: 800px) {
+  .noteBtn {
     position: fixed;
     padding: 8px 34px;
     left: calc(50% - 280px/2);
     top: calc(50% - 40px/2 + 258px);
     right: 4%;
+    z-index: 11;
   }
-}
 
-@media screen and (max-width: 1231px) {
-  .gallery-block {
-    margin-top: 16px;
+  .mainContent {
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 690px) {
-  .note__btn {
+  .noteBtn {
     position: static;
     width: 100%;
     height: 40px;
   }
 
-  .note__btn .text {
+  .labelDate {
+    order: -1;
+    margin-right: 10px;
+  }
+
+  .noteBtn .text {
     display: block;
+  }
+
+  .inputDate {
+    margin-left: 0;
   }
 }

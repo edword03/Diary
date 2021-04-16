@@ -38,9 +38,11 @@ const Modal = ({ onClose, smile, img, title, date, text = '', setText }) => {
         <div className={classes.image}>
           <img className={classes.img} src={img} alt="" />
         </div>
-        <textarea className={classes.text} onChange={e => setText(e.target.value)} value={text}>
-          {text}
-        </textarea>
+        <div className={classes.text}>
+          <textarea className={classes.textarea} onChange={e => setText(e.target.value)} value={text}>
+            {text}
+          </textarea>
+        </div>
       </div>
     </dialog>
   );

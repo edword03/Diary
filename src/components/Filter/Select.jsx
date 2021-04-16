@@ -1,4 +1,5 @@
 import React  from 'react';
+import PropTypes from 'prop-types';
 import { moods } from '../../api/data';
 
 import classes from './Filter.module.css';
@@ -9,7 +10,7 @@ const Select = ({ smile, setSmile }) => {
       <select
         className={`select ${classes.select}`}
         value={smile}
-        onChange={e => setSmile(e.target.value.trim())}>
+        onChange={setSmile}>
         <option value=""></option>
         {moods.map((smileItem, index) => (
           <option key={`smile-option_${index}`} value={smileItem}>
@@ -21,5 +22,10 @@ const Select = ({ smile, setSmile }) => {
     </div>
   );
 };
+
+Select.propTypes = {
+  smile: PropTypes.string.isRequired,
+  setSmile: PropTypes.func.isRequired
+}
 
 export default Select;

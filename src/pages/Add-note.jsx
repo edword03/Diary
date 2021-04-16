@@ -5,7 +5,7 @@ import Gallery from '../components/Gallery/Gallery';
 import { useAddNote } from '../hooks/useAddNote';
 
 import ImgBtn from '../assets/Union.svg';
-import './Add-note.css';
+import classes from './Add-note.module.css';
 
 function AddNote({ onSubmit }) {
   const {
@@ -20,40 +20,48 @@ function AddNote({ onSubmit }) {
     text,
     setText,
   } = useAddNote();
+
+  const onSmile = e => {
+    const smile = e.target.value
+    setSmile(smile)
+  }
+
   const inputRef = React.useRef();
   const selectDate = () => {
-    inputRef.current.type = 'date';
+    inputRef.current.type = inputRef.current.type === 'text' ? 'date' : 'text';
   };
 
+
   return (
-    <div className="main-content">
-      <div className="form-block">
-        <form className="form note-form" onSubmit={e => onSubmit(e, title, smile, date, src, text)}>
-          <div className="form-container">
-            <div className="form__group">
+    <div className={classes.mainContent}>
+      <div className={classes.formBlock}>
+        <form onSubmit={e => onSubmit(e, title, smile, date, src, text)}>
+          <div className={classes.container}>
+            <div className={classes.group}>
               <label htmlFor="name">
                 <input
                   type="text"
-                  className="note-form__input-name"
+                  className={classes.inputName}
                   name="name"
                   placeholder="Название"
                   value={title}
-                  onChange={e => setTitle(e.target.value.trim())}
+                  onChange={e => setTitle(e.target.value.trimStart())}
                 />
               </label>
             </div>
-            <div className="form__group">
-              <Select smile={smile} setSmile={setSmile} />
-              <label htmlFor="date">
+            <div className={classes.group}>
+              <Select smile={smile} setSmile={onSmile} />
+              <label htmlFor="date" className={classes.labelDate}>
                 <input
                   ref={inputRef}
                   type="text"
                   name="date"
-                  className="note-form__input-date"
+                  className={classes.inputDate}
                   placeholder="Дата"
                   value={date}
                   onChange={e => setDate(e.target.value)}
                   onFocus={selectDate}
+                  onBlur={selectDate}
                 />
               </label>
             </div>
@@ -61,11 +69,11 @@ function AddNote({ onSubmit }) {
           <textarea
             name="description"
             id="description "
-            className="note-form__textarea"
+            className={classes.textarea}
             placeholder="Описание"
             value={text}
-            onChange={e => setText(e.target.value.trim())}></textarea>
-          <Button btnImg={ImgBtn} btnCastom="note__btn">
+            onChange={e => setText(e.target.value.trimStart())}></textarea>
+          <Button btnImg={ImgBtn} btnCastom={classes.noteBtn}>
             Создать
           </Button>
         </form>

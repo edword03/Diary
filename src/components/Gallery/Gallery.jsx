@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { getData } from '../../api/api';
 
 import SearchIcon from '../../assets/search-found.svg';
@@ -11,15 +12,20 @@ const Gallery = ({ setSrc }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [image, setImage] = useState('');
 
-  const getPicture = async (event, query) => {
-    event.preventDefault();
+  const getPicture = async (query) => {
     const res = await getData(query);
     if (res.photos.length) {
       setImage(res.photos);
     } 
     setIsLoaded(true);
-    console.log(res);
   };
+
+  const onSubmit = (event, query) => {
+    event.preventDefault();
+    if (query) {
+      getPicture(query.trim());
+    }
+  }
 
   const setImgForForm = img => {
     setSrc(img);
@@ -27,7 +33,7 @@ const Gallery = ({ setSrc }) => {
 
   return (
     <div className={classes.galleryBlock}>
-      <form className={classes.search} onSubmit={e => getPicture(e, query.trim())}>
+      <form className={classes.search} onSubmit={e => onSubmit(e, query)}>
         <input
           type="text"
           placeholder="Поиск"
@@ -52,8 +58,6 @@ const Gallery = ({ setSrc }) => {
                 src={large}
                 key={`galleryitem_${id}`}
                 onClick={setImgForForm}
-                // selected={selected}
-                // setSelected={setSelected}
               />
             );
           })
@@ -63,5 +67,9 @@ const Gallery = ({ setSrc }) => {
     </div>
   );
 };
+
+Gallery.propTypes = {
+  setSrc: PropTypes.func
+}
 
 export default Gallery;

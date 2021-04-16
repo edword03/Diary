@@ -5,10 +5,10 @@ import { Contex } from '../../Contex';
 import classes from './Main.module.css';
 
 const Main = () => {
-  const {notes} = useContext(Contex);
+  const {filtredNotes} = useContext(Contex);
   return (
     <main className={classes.container}>
-      {notes.map((note, index) => <Note key={`note_${index}`} {...note} />)}
+      {filtredNotes && filtredNotes.map((note, index) => <Note key={`note_${index}`} {...note} />)}
     </main>
   );
 };
