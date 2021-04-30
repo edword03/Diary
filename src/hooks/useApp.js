@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
+import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import reduce from '../redux/reducer/reducer';
 import { note } from '../db';
 
 export const useApp = () => {
+  // const store = configureStore(reduce(''));
+  
+
   const [isNote, setIsNote] = useState(true);
   const [notes, setNotes] = useState([]);
   const [filtredNotes, setFiltredNotes] = useState([]);
